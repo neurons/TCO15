@@ -1,6 +1,7 @@
 import facebook
 import requests
 import yaml
+import twilio_caller
 from datetime import datetime, timedelta
 
 # This should not be committed to a public repo. But this
@@ -9,6 +10,7 @@ APP_ID = '1667264776818224'
 APP_SECRET = '1be1d6fe492e70c79d2e397c16685152'
 STRPTIME_FORMAT = '%Y-%m-%dT%H:%M:%S-0700'
 SMS_FORMAT = '%s will run from %s to %s. Attending: %d'
+RECEIVER_NUMBER = '+11111111111'
 
 def get_fb_token(app_id, app_secret):           
   payload = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': app_secret}
@@ -38,4 +40,5 @@ event_end = datetime.strptime(event['end_time'], STRPTIME_FORMAT) + timedelta(ho
 event_start_str = event_start.strftime("%B %d at %H:%M %p")
 event_end_str = event_end.strftime("%H:%M %p")
 sms_msg = SMS_FORMAT % (event_name, event_start_str, event_end_str, event_count)
-print sms_msg
+
+twilio_caller.send_sms(sms_msg, RECEIVER_NUMBER)
