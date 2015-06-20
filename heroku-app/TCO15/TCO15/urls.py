@@ -19,5 +19,6 @@ from views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^send_sms_django/', send_sms_django),
     url(r'^$', homepage),
 ]
