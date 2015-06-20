@@ -1,0 +1,6 @@
+twilio:
+    account_sid: AC6d6bc93fb4d6093065026dfd56ff382d
+    auth_token: c7b229e80afe3d3e54145789f2095cf9
+    from_num: +14153001341
+
+to_num: +14153001341
