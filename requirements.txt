@@ -2,3 +2,4 @@ twilio
 pyyaml
 facebook-sdk
 gunicorn
+Django
