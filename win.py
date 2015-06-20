@@ -13,12 +13,21 @@ def get_fb_token(app_id, app_secret):
   print "\n\n\n"
   return result
 
+def get_event_count(event_id):
+  """ Event count given event id """
+  event_obj = graph.get_object(event_id, fields='attending.summary(true).limit(1)')
+  return event_obj['attending']['summary']['count']
+
 # Get access token
 access_token = get_fb_token(APP_ID, APP_SECRET)
 graph = facebook.GraphAPI(access_token=access_token)
 
 # Try to access https://www.facebook.com/events/789305557821642/
-post = graph.get_object('789305557821642')
-print "Name:", post['name']
-print "Start time:", post['start_time']
-print "End time:", post['end_time']
+event_id = '789305557821642'
+event = graph.get_object(event_id)
+event_count = get_event_count(event_id)
+print "Name:", event['name']
+print "Start time:", event['start_time']
+print "End time:", event['end_time']
+print "Attending:", event_count
+
