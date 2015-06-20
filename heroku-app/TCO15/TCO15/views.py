@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from win import *
 
 PAGE = """
+<title>GameTime</title>
 <style>
   body {
     padding-top: 120px;
@@ -106,9 +107,9 @@ $(document).ready(function(){
 <div class="container">
 
 	<div class="form-signin">
-		<h1 style='color:rgb(252,250,104);margin-bottom:20px' class="form-signin-heading text-muted">GameTime</h1>
-		<input id='phonenumber' style='margin-bottom:20px' type="text" class="form-control" placeholder="Phone Number" required="" autofocus="">
-		<input style='margin-bottom:20px' type="text" class="form-control" placeholder="City" required="">
+		<h1 style='color:rgb(252,250,104);margin-bottom:40px' class="form-signin-heading text-muted">GameTime</h1>
+		<input id='phonenumber' style='margin-bottom:10px' type="text" class="form-control" placeholder="Phone Number" required="" autofocus="">
+		<input style='margin-bottom:10px' type="text" class="form-control" placeholder="City" required="">
 		<button id='submit_all' class="btn btn-lg btn-primary btn-block">
 			Get events!
 		</button>
