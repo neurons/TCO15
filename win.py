@@ -1,5 +1,6 @@
 import facebook
 import requests
+import yaml
 
 # This should not be committed to a public repo. But this
 # is a hackathon so who gives a shit.
