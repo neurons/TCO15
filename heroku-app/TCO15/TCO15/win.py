@@ -2,6 +2,7 @@ import facebook
 import requests
 import yaml
 import twilio_caller
+import random
 from datetime import datetime, timedelta
 
 # This should not be committed to a public repo. But this
@@ -33,7 +34,7 @@ graph = facebook.GraphAPI(access_token=access_token)
 
 def send_sms_to(phone_number):
   # Try to access https://www.facebook.com/events/1041695122513908/
-  event_id = '1041695122513908'
+  event_id = random.choice(['1041695122513908','1570997046497847'])
   event = graph.get_object(event_id)
   event_count = get_event_count(event_id)
   event_name = event['name']
